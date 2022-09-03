@@ -33,9 +33,14 @@ function Ultimate_Challenge() {
         }
     ]
 
-    const infoList = info.map(singleInfo => (<Card info={singleInfo}/> ))
-    const tableList = info.map(singleInfo => (<Row info={singleInfo}/>))
-    const RawList = info.map(singleInfo => (<Raw info={singleInfo}/>))
+    const infoList = info.map(singleInfo => {
+            if (choice == 1) 
+                return <Raw info={singleInfo}/>
+            else if (choice == 2 )
+                return <Card info={singleInfo}/> 
+            else
+                return <Row info={singleInfo}/>
+            })
 
   return (
     <div>
@@ -56,7 +61,7 @@ function Ultimate_Challenge() {
                         <></>
                     : choice == 1 ?
                         <div>
-                            {RawList}
+                            {infoList}
                         </div>
                         
                     : choice == 2 ?
@@ -67,7 +72,7 @@ function Ultimate_Challenge() {
                     :
                      <table className="table">
                         <tbody>
-                            {tableList}
+                            {infoList}
                         </tbody>
                     </table>
                     }

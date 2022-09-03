@@ -42,7 +42,9 @@ function Challenge_21() {
         },
     ]
 
-    const studentsList = students.map(student => (<Row id={student.id} firstName={student.firstName} lastName={student.lastName} twitter={student.twitter} seeDetails={() => alert(student)} />))
+    const studentsList = students.map(student => (
+        <Row id={student.id} firstName={student.firstName} lastName={student.lastName} twitter={student.twitter} />
+    ))
 
 
   return (
